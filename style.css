@@ -1,0 +1,15 @@
+#datacol > div {
+	border-bottom: #888 solid 2px;
+}
+
+input[type='number'] {
+	width: 50px;
+}
+
+#calc_c {
+	position: absolute;
+	right: 0;
+	top: 0;
+	border: 2px solid black;
+	padding: 20px;
+}

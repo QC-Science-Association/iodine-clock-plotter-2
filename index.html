@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Iodine Clock Plot</title>
+	<link rel="stylesheet" type="text/css" href="style.css" />
+	<script src="script.js" defer></script>
+</head>
+<body>
+	<div id="calc_c">
+		Value of c:
+		<input type="number" oninput="model.c = Number(this.value); rerenderDatapointsAndTrain();"/>
+	</div>
+	<button onclick="addData()">Add new data</button>
+	<br>
+	<div id="datacol"></div>
+	<br>
+	<span id="equationpredictor">ln (1 - ? / v) = ?t</span>
+	<br>
+	R<sup>2</sup> = <span id="rsquared">?</span> (Range: 0 - 1, should be as close to 1 as possible)
+	<br>
+	<br>
+	Vol. of solution B to be used for time
+	<input type="number" id="inputpredicttime" oninput="updateTimeEstimate()" value="1" />s:
+	<br>
+	<span id="outputpredicttime">???mL</span>
+	<br>
+	Time needed for
+	<input type="number" id="inputpredictvol" oninput="updateVolEstimate()" value="1" />mL
+	of solution B:
+	<br>
+	<span id="outputpredictvol">???s</span>
+	<br>
+	<br>
+	Graph
+	<br>
+	- y axis: ln (1 - c / v)
+	<br>
+	- x axis: time
+	<br>
+	<canvas id="canvas" width="500" height="500"></canvas>
+</body>
+</html>
